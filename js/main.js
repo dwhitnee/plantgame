@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1000, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 var player;
 var platforms;
 var cursors;
@@ -32,7 +32,7 @@ function create() {
     var ground = platforms.create(0, game.world.height - 64, 'ground');
 
     //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
-    ground.scale.setTo(2, 2);
+    //ground.scale.setTo(2, 2);
 
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
