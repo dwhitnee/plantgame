@@ -45,7 +45,7 @@ function create() {
     ledge2.body.immovable = true;
 
     // The player and its settings
-    player = game.add.sprite(32, game.world.height - 150, 'seedling');
+    player = game.add.sprite(32, game.world.height - 200, 'seedling');
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
