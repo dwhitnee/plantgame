@@ -34,7 +34,7 @@
   </script>
   <br>
   <h1>
-  hi
+  <a href=http://phaser.io/tutorials/making-your-first-phaser-game>http://phaser.io/tutorials/making-your-first-phaser-game</a>
   </h1>
 </body>
 </html>
