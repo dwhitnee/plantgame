@@ -38,13 +38,11 @@ function create() {
     ground.body.immovable = true;
 
     //  Now let's create two ledges
-    var ledge = platforms.create(400, 400, 'ground');
+    var ledge1 = platforms.create(400, 400, 'ground');
+    ledge1.body.immovable = true;
 
-    ledge.body.immovable = true;
-
-    ledge = platforms.create(-150, 250, 'ground');
-
-    ledge.body.immovable = true;
+    var ledge2 = platforms.create(-150, 250, 'ground');
+    ledge2.body.immovable = true;
 
     // The player and its settings
     player = game.add.sprite(32, game.world.height - 150, 'seedling');
@@ -64,10 +62,9 @@ function create() {
     stars = game.add.group();
 
     stars.enableBody = true;
-
+  
     //  Here we'll create 12 of them evenly spaced apart
-    for (var i = 0; i < 12; i++)
-    {
+    for (var i = 0; i < 12; i++) {
         //  Create a star inside of the 'stars' group
         var star = stars.create(i * 70, 0, 'star');
 
@@ -96,22 +93,19 @@ function update() {
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
 
-    if (cursors.left.isDown)
-    {
+    if (cursors.left.isDown) {
         //  Move to the left
         player.body.velocity.x = -150;
 
         player.animations.play('left');
-    }
-    else if (cursors.right.isDown)
-    {
+      
+    } else if (cursors.right.isDown) {    
         //  Move to the right
         player.body.velocity.x = 150;
 
         player.animations.play('right');
-    }
-    else
-    {
+      
+    } else {
         //  Stand still
         player.animations.stop();
 
@@ -119,8 +113,7 @@ function update() {
     }
 
     //  Allow the player to jump if they are touching the ground.
-    if (cursors.up.isDown && player.body.touching.down)
-    {
+    if (cursors.up.isDown && player.body.touching.down) {
         player.body.velocity.y = -150;
     }
 
